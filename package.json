@@ -1,0 +1,23 @@
+{
+  "name": "websockets-using-socket.io",
+  "version": "1.0.0",
+  "description": "real time chat using websockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilviuManea/WebSockets-using-Socket.io.git"
+  },
+  "author": "Silviu Manea Hamzau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SilviuManea/WebSockets-using-Socket.io/issues"
+  },
+  "homepage": "https://github.com/SilviuManea/WebSockets-using-Socket.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
