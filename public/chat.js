@@ -7,11 +7,17 @@ var message = document.getElementById('message');
     btn = document.getElementById('send');
     output = document.getElementById('output');
 
-//Emit Events
+//Emit Events(to the server)
 btn.addEventListener('click',function(){
     socket.emit('chat',{//emits a message down the websocket to the server
         message:message.value, //we send this values
         handle:handle.value 
-    }) 
+    }); 
 
-})
+});
+
+//Listen for events(from the server)
+socket.on('chat',function(data){
+    //Render the messages on the output chat window
+    output.innerHTML += '<p><strong>'+ data.handle + ':</strong>'+ data.message + '</p>';
+});
