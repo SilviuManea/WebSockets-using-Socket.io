@@ -24,6 +24,8 @@ message.addEventListener('keypress',function(){
 
 //Listen for events(from the server)
 socket.on('chat',function(data){
+    //Clear the feedback field
+    feedback.innerHTML="";
     //Render the messages on the output chat window
     output.innerHTML += '<p><strong>'+ data.handle + ':</strong>'+ data.message + '</p>';
 });
@@ -31,5 +33,5 @@ socket.on('chat',function(data){
 //Listen for typing broadcasts
 socket.on('typing',function(data){
     //output the user handle to the browser
-    feedback.innerHTML = '<p><em>'+ data +'is typing a message...</em></p>';
+    feedback.innerHTML = '<p><em>'+ data +' is typing a message...</em></p>';
 });
