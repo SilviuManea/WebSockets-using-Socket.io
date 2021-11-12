@@ -6,6 +6,7 @@ var message = document.getElementById('message');
     handle = document.getElementById('handle');
     btn = document.getElementById('send');
     output = document.getElementById('output');
+    feedback = document.getElementById('feedback');
 
 //Emit Events(to the server)
 btn.addEventListener('click',function(){
