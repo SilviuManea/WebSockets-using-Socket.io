@@ -15,4 +15,8 @@ var io = socket(server);
 
 io.on('connection',function(socket){
     console.log('Made socket connection',socket.id)
-})
+
+    socket.on('chat',function(data){ //Listen for the messages from the client
+        io.sockets.emit('chat', data); //Emit the chat message on all sockets 
+    });
+});
