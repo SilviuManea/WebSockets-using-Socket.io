@@ -27,3 +27,9 @@ socket.on('chat',function(data){
     //Render the messages on the output chat window
     output.innerHTML += '<p><strong>'+ data.handle + ':</strong>'+ data.message + '</p>';
 });
+
+//Listen for typing broadcasts
+socket.on('typing',function(data){
+    //output the user handle to the browser
+    feedback.innerHTML = '<p><em>'+ data +'is typing a message...</em></p>';
+});
