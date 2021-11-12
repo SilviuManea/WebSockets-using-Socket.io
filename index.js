@@ -17,6 +17,12 @@ io.on('connection',function(socket){
     console.log('Made socket connection',socket.id)
 
     socket.on('chat',function(data){ //Listen for the messages from the client
-        io.sockets.emit('chat', data); //Emit the chat message on all sockets 
+        io.sockets.emit('chat', data); //Emit the chat message on all sockets (all clients)
     });
+
+    //broadcast from the server to the frontend at the rest of the clients
+    socket.on('typing',function(data){
+        socket.broadcast.emit('typing',data)//emits to the rest of the clients but not the client that emitted the event/socket is the one that emitted the event
+    });
+
 });

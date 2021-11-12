@@ -19,7 +19,7 @@ btn.addEventListener('click',function(){
 
 //Listening for the keypress event in order to show the message "x is typing" in the chat windows
 message.addEventListener('keypress',function(){
-    socket.emit('typing',handle.value);
+    socket.emit('typing',handle.value); //we emit this to the server(which via boradcasting will send it to the rest of the clients)
 });
 
 //Listen for events(from the server)
